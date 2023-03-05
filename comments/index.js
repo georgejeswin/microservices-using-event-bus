@@ -19,7 +19,6 @@ app.get("/api/posts/:id/comments", (req, res) => {
 
 app.post("/api/posts/:id/comments", (req, res) => {
   const id = uuidv4();
-  console.log("body", req.body);
   const { comment } = req.body;
   const postComments = comments[req.params.id] || [];
   postComments.push({
