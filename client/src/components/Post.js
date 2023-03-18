@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import CreateComment from "./CreateComment";
 
 const Post = ({ post }) => {
-  const [comments, setComments] = useState([]);
-  const getComments = async () => {
-    const response = await axios.get(
-      `http://localhost:4001/api/posts/${post.id}/comments`
-    );
-    setComments(response.data);
-  };
+  // const [comments, setComments] = useState([]);
+  // const getComments = async () => {
+  //   const response = await axios.get(
+  //     `http://localhost:4001/api/posts/${post.id}/comments`
+  //   );
+  //   setComments(response.data);
+  // };
 
-  useEffect(() => {
-    getComments();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  // getComments();
+  // console.log(post);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div className="border-2 shadow-lg p-5">
@@ -22,7 +22,7 @@ const Post = ({ post }) => {
       <div className="p-5">
         <h4 className="text-lg font-semibold">Comments</h4>
         <ul className="list-disc pl-10">
-          {comments.map((comment) => (
+          {post.comments.map((comment) => (
             <li key={comment.id} className="font-thin">
               {comment.comment}
             </li>
